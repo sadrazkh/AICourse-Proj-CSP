@@ -14,7 +14,7 @@ namespace AICourse_Proj_CSP
                 {
                     '0' => false,
                     '1' => true,
-                    _ => throw new ArgumentException();
+                    _ => throw new ArgumentException(),
                 });
             }
 
