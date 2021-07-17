@@ -27,8 +27,8 @@ namespace AICourse_Proj_CSP.Input
 
         public InputModel CreateNode()
         {
-            try
-            {
+            //try
+            //{
                 if (File.Exists(_rootPhat + _fileName))
                 {
                     var res = new InputModel();
@@ -37,7 +37,7 @@ namespace AICourse_Proj_CSP.Input
                     var lineCount = inputs.Count - 1;
 
                     var nodes = new List<InputNode>();
-                    for (int i = 1; i < lineCount; i++)
+                    for (int i = 1; i <= lineCount; i++)
                     {
                         nodes.Add(new InputNode() {Name = NodeName.GetNodeName(), RelationNodes = new List<InputNode>()});
                     }
@@ -45,7 +45,7 @@ namespace AICourse_Proj_CSP.Input
                     for (int i = 0; i < lineCount-1; i++)
                     {
                         var relation = inputs[i + 1].HaveRelations();
-                        for (int j = 1; j < relation.Count; j++)
+                        for (int j = 0; j < relation.Count; j++)
                         {
                             if (relation[j])
                             {
@@ -60,12 +60,12 @@ namespace AICourse_Proj_CSP.Input
 
                 return new InputModel();
 
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //    throw;
+            //}
         }
 
     }
