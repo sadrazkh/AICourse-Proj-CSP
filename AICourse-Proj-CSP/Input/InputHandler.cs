@@ -25,9 +25,8 @@ namespace AICourse_Proj_CSP.Input
             _fileName = "input.txt";
         }
 
-        public Task<InputNode> CreateNode()
+        public InputModel CreateNode()
         {
-            throw new NotImplementedException();
             try
             {
                 if (File.Exists(_rootPhat + _fileName))
@@ -40,18 +39,27 @@ namespace AICourse_Proj_CSP.Input
                     var nodes = new List<InputNode>();
                     for (int i = 1; i < lineCount; i++)
                     {
-                        nodes.Add(new InputNode() {Name = NodeName.GetNodeName()});
+                        nodes.Add(new InputNode() {Name = NodeName.GetNodeName(), RelationNodes = new List<InputNode>()});
                     }
 
                     for (int i = 0; i < lineCount-1; i++)
                     {
                         var relation = inputs[i + 1].HaveRelations();
-
+                        for (int j = 1; j < relation.Count; j++)
+                        {
+                            if (relation[j])
+                            {
+                                nodes[i].RelationNodes.Add(nodes[j]);
+                            }
+                        }
                     }
 
-
+                    res.InputNodes = nodes;
+                    return res;
                 }
-                
+
+                return new InputModel();
+
             }
             catch (Exception e)
             {
