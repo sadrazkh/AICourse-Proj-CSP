@@ -1,4 +1,4 @@
-﻿namespace AICourse_Proj_CSP
+﻿namespace AICourse_Proj_CSP.Input
 {
     public static class NodeName
     {

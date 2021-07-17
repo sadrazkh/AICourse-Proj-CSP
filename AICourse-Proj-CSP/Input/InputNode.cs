@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AICourse_Proj_CSP
+namespace AICourse_Proj_CSP.Input
 {
     public class InputNode
     {

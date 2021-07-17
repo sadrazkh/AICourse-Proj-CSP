@@ -7,7 +7,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AICourse_Proj_CSP
+namespace AICourse_Proj_CSP.Input
 {
     public class InputHandler
     {
